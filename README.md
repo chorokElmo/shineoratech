@@ -15,6 +15,33 @@ pnpm build
 
 The production website is generated in `out/`. Deploy this directory with any HTTPS static host. `.openai/hosting.json` identifies its registered private Site. A private deployment is not a public agency launch; audience access and a custom domain can be configured separately.
 
+## Run with Docker Compose
+
+Install Docker with Docker Compose v2 (on Windows, use Docker Desktop with Linux containers), then run from this project directory:
+
+```sh
+docker compose up --build -d
+```
+
+Open http://localhost:8080. The image builds the Next.js static export with Node.js 22 and pnpm 10.28.2, then serves it with Nginx. Node.js and source files are not included in the runtime image. No database or environment variables are required for the current site.
+
+To use a different host port in PowerShell:
+
+```powershell
+$env:PORT = "8090"
+docker compose up --build -d
+```
+
+Inspect status and logs, or stop the container:
+
+```sh
+docker compose ps
+docker compose logs -f web
+docker compose down
+```
+
+Re-run `docker compose up --build -d` after source changes. This runs the production static site, without the Next.js development indicator. The build needs network access to pull base images and install locked dependencies. HTTPS requires a separate reverse proxy or hosting configuration.
+
 ## Content and structure
 
 - `app/page.tsx`: semantic section composition and organisation structured data.
