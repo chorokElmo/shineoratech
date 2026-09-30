@@ -53,6 +53,14 @@ Re-run `docker compose up --build -d` after source changes. This runs the produc
 - `app/sitemap.ts`, `app/robots.ts`, `app/layout.tsx`: sitemap, robots, canonical and OpenGraph metadata.
 - `DESIGN-SYSTEM.md`: brand direction and page architecture.
 
+## Service pages
+
+- /creation-site-web/ : création de sites vitrines.
+- /creation-site-ecommerce/ : création de boutiques en ligne.
+- /applications-web/ : développement d’applications métier.
+
+Each page has its own title, description, canonical URL and Service structured data. All three pages are linked from the homepage and included in the sitemap. SEO URLs use the origin configured in lib/site.ts; update it to the confirmed production domain before publishing.
+
 ## Lead generation
 
 WhatsApp uses the supplied Moroccan number: +212 681 402 071. The form validates name, phone, email, project type, budget and message. It prepares an encoded, structured enquiry for WhatsApp; the visitor explicitly continues and sends in WhatsApp. It never claims that a message was sent. No lead is saved in local storage or a database, and no email delivery is currently configured. This requires WhatsApp to complete delivery.
@@ -63,7 +71,7 @@ To add independent email delivery, supply a recipient and an email service. Add 
 
 - Business email and Instagram, Facebook, TikTok and LinkedIn URLs.
 - Real project screenshots and approved public demos.
-- Confirmed stacks for FTTH Coverage Platform, SplitEasy and Finance Management.
+- Confirmed stacks for SplitEasy and Finance Management.
 - Public domain and publishing audience when ready for launch.
 
 The illustrative previews contain clearly labelled fictitious demonstration data. They do not claim actual client outcomes. No confidential records or customer testimonials are included.
