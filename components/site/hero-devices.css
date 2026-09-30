@@ -1,0 +1,22 @@
+.hero-devices{position:relative;isolation:isolate;width:100%;aspect-ratio:1.85;perspective:1200px;margin-block:35px 16px}
+.hero-devices-float{position:absolute;inset:0;animation:hero-device-float 6s ease-in-out infinite}
+.hero-devices-depth{position:absolute;inset:0;transform-style:preserve-3d}
+.hero-device-laptop{position:absolute;width:90%;left:-3%;bottom:0}
+.hero-device-phone{position:absolute;width:23%;right:-1%;bottom:0;z-index:2}
+.hero-devices svg{display:block;width:100%;height:auto;overflow:hidden}
+.hero-device-phone-hover{transition:transform .55s cubic-bezier(.22,1,.36,1);transform-origin:center bottom}
+.hero-devices-glow{position:absolute;bottom:-3%;left:12%;width:76%;height:15%;background:radial-gradient(ellipse,#a588ff24,transparent 70%);filter:blur(14px);opacity:.45;transition:opacity .6s;pointer-events:none}
+.hero-hotspot{position:absolute;z-index:5}
+.hero-hotspot-design{left:22%;top:-6%}.hero-hotspot-performance{left:65%;top:-6%}.hero-hotspot-security{right:0;bottom:-10%}
+.hero-hotspot button{display:grid;place-items:center;width:36px;height:36px;padding:0;border:0;border-radius:50%;background:transparent}
+.hero-hotspot button>span{width:8px;height:8px;border-radius:50%;background:#b4a0ff;box-shadow:0 0 0 5px #b4a0ff10,0 0 12px #b4a0ff24;transition:box-shadow .25s}
+.hero-hotspot-tooltip{position:absolute;bottom:100%;left:50%;width:215px;padding:13px 15px;border:1px solid #b4a0ff30;border-radius:9px;background:#191620e8;backdrop-filter:blur(16px);box-shadow:0 10px 30px #0003;opacity:0;visibility:hidden;transform:translate(-50%,4px) scale(.96);transform-origin:center bottom;transition:opacity .2s,transform .2s,visibility .2s;pointer-events:none;font-size:12px;line-height:1.6}
+.hero-hotspot-tooltip strong{display:block;font-size:13px;font-weight:600;color:#f3edff;margin-bottom:4px}.hero-hotspot-tooltip>span{color:#c1b7ce}
+.hero-hotspot-security .hero-hotspot-tooltip{bottom:auto;top:100%;left:auto;right:0;transform:translateY(-4px) scale(.96);transform-origin:right top}
+.hero-hotspot:hover .hero-hotspot-tooltip,.hero-hotspot:focus-within .hero-hotspot-tooltip{opacity:1;visibility:visible;transform:translate(-50%,0) scale(1)}
+.hero-hotspot-security:hover .hero-hotspot-tooltip,.hero-hotspot-security:focus-within .hero-hotspot-tooltip{transform:translateY(0) scale(1)}
+@keyframes hero-device-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@media(hover:hover) and (pointer:fine){.hero-device-phone:hover .hero-device-phone-hover{transform:translateY(-5px) scale(1.02)}.hero-devices:hover .hero-devices-glow{opacity:.85}}
+@media(min-width:768px) and (max-width:1100px){.hero-devices{width:94%;margin-inline:auto}.hero-hotspot-tooltip{width:190px}}
+@media(max-width:767px){.hero-devices{margin-block:12px 16px}.hero-hotspot{display:none}.hero-devices-depth{transform:none!important}.hero-device-laptop,.hero-device-phone{transform:none!important}.hero-device-phone-hover{transform:none!important}}
+@media(prefers-reduced-motion:reduce){.hero-devices-float{animation:none}.hero-devices-depth,.hero-device-laptop,.hero-device-phone,.hero-device-phone-hover{transform:none!important}.hero-devices-glow,.hero-device-phone-hover,.hero-hotspot-tooltip,.hero-hotspot button>span{transition:none}}
