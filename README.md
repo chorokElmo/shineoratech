@@ -53,6 +53,10 @@ Re-run `docker compose up --build -d` after source changes. This runs the produc
 - `app/sitemap.ts`, `app/robots.ts`, `app/layout.tsx`: sitemap, robots, canonical and OpenGraph metadata.
 - `DESIGN-SYSTEM.md`: brand direction and page architecture.
 
+## Languages and Gulf targeting
+
+Arabic is the default language at /. French is available at /fr/. The homepage and all three service pages have matching language switches, canonical URLs and hreflang alternates. Arabic pages use right-to-left layouts with locally hosted Cairo headings and Tajawal body text; font licenses are in public/fonts/. The Arabic content targets Saudi Arabia, Kuwait and other Gulf markets through remote collaboration. The configured telephone remains the supplied Moroccan number.
+
 ## Service pages
 
 - /creation-site-web/ : création de sites vitrines.

@@ -11,7 +11,8 @@ const points = [
 ] as const;
 const asset = '/brand/shineoratech-devices-clean.png';
 
-export function HeroDevices() {
+export function HeroDevices({ language = 'fr' }: { language?: 'ar' | 'fr' }) {
+  const localizedPoints = language === 'ar' ? [['design', 'تصميم عصري', 'هوية تعبر عن نشاطك.'], ['performance', 'الأداء', 'اهتمام بسرعة التصفح.'], ['security', 'الحماية', 'إعدادات تناسب بيانات مشروعك.']] : points;
   const reduced = useReducedMotion();
   const x = useMotionValue(0);
   const y = useMotionValue(0);
@@ -38,17 +39,17 @@ export function HeroDevices() {
       <motion.div className="hero-devices-depth" style={reduced ? undefined : { rotateX, rotateY }}>
         <motion.div className="hero-device-laptop" style={reduced ? undefined : { x: laptopX }}>
           <motion.div initial={reduced ? false : { opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}>
-            <svg viewBox="0 0 1440 820" role="img" aria-label="Maquette illustrative du tableau de bord ShineoraTech sur ordinateur, avec une petite plante et des données fictives"><image href={asset} width="1919" height="820" /></svg>
+            <svg viewBox="0 0 1440 820" role="img" aria-label={language === 'ar' ? 'تصميم توضيحي للوحة تحكم على الكمبيوتر ببيانات افتراضية' : 'Maquette illustrative du tableau de bord ShineoraTech sur ordinateur, avec une petite plante et des données fictives'}><image href={asset} width="1919" height="820" /></svg>
           </motion.div>
         </motion.div>
         <motion.div className="hero-device-phone" style={reduced ? undefined : { x: phoneX, y: phoneY }}>
           <motion.div initial={reduced ? false : { opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.16, ease: [0.22, 1, 0.36, 1] }}>
-            <div className="hero-device-phone-hover"><svg viewBox="1540 120 379 700" role="img" aria-label="Maquette illustrative du site ShineoraTech sur smartphone"><image href={asset} width="1919" height="820" /></svg></div>
+            <div className="hero-device-phone-hover"><svg viewBox="1540 120 379 700" role="img" aria-label={language === 'ar' ? 'تصميم توضيحي لموقع ShineoraTech على الهاتف' : 'Maquette illustrative du site ShineoraTech sur smartphone'}><image href={asset} width="1919" height="820" /></svg></div>
           </motion.div>
         </motion.div>
       </motion.div>
     </div>
-    {points.map(([key, title, description]) => <div className={`hero-hotspot hero-hotspot-${key}`} key={key}>
+    {localizedPoints.map(([key, title, description]) => <div className={`hero-hotspot hero-hotspot-${key}`} key={key}>
       <button type="button" aria-label={title} aria-describedby={`hero-tooltip-${key}`}><span /></button>
       <div className="hero-hotspot-tooltip" id={`hero-tooltip-${key}`} role="tooltip"><strong>{title}</strong><span>{description}</span></div>
     </div>)}

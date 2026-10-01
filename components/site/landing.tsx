@@ -1,5 +1,6 @@
 'use client';
 import { motion, useReducedMotion } from 'framer-motion';
+import { LanguageSwitch } from './language-switch';
 import { HeroDevices } from './hero-devices';
 import { Menu, Sparkles, Check, Globe2, Smartphone, Layers, HeartHandshake, Search, LayoutDashboard, Users, BriefcaseBusiness, Settings2, Bell, MessageCircle } from 'lucide-react';
 import { Sheet, SheetContent, SheetTitle, SheetTrigger, SheetClose } from '@/components/ui/sheet';
@@ -7,7 +8,7 @@ import { whatsappUrl } from '@/lib/site';
 export function Brand() { return <span className="brand brand-image"><img src="/brand/shineoratech-logo.png" alt="ShineoraTech — Agence digitale au Maroc" width={2103} height={748} /></span>; }
 const links = [['Accueil', '#accueil'], ['Services', '#services'], ['Réalisations', '#realisations'], ['À propos', '#a-propos'], ['Processus', '#processus'], ['Contact', '#contact']];
 export function Navbar() {
-    return <header className="navbar"><div className="container nav-inner"><a className="skip-link" href="#main">Aller au contenu</a><a href="#accueil" aria-label="ShineoraTech, accueil"><Brand /></a><nav className="desktop-nav" aria-label="Navigation principale">{links.map(([label, href]) => <a key={href} href={href}>{label}</a>)}</nav><a href="#contact" className="button small nav-cta">Demander un devis</a><Sheet><SheetTrigger className="mobile-toggle" aria-label="Ouvrir le menu"><Menu /></SheetTrigger><SheetContent className="mobile-sheet"><SheetTitle>ShineoraTech</SheetTitle><nav aria-label="Navigation mobile">{links.map(([label, href]) => <SheetClose key={href} asChild><a href={href}>{label}</a></SheetClose>)}</nav><SheetClose asChild><a className="button" href="#contact">Demander un devis</a></SheetClose></SheetContent></Sheet></div></header>;
+    return <header className="navbar"><div className="container nav-inner"><a className="skip-link" href="#main">Aller au contenu</a><a href="#accueil" aria-label="ShineoraTech, accueil"><Brand /></a><LanguageSwitch language="fr" /><nav className="desktop-nav" aria-label="Navigation principale">{links.map(([label, href]) => <a key={href} href={href}>{label}</a>)}</nav><a href="#contact" className="button small nav-cta">Demander un devis</a><Sheet><SheetTrigger className="mobile-toggle" aria-label="Ouvrir le menu"><Menu /></SheetTrigger><SheetContent className="mobile-sheet"><SheetTitle>ShineoraTech</SheetTitle><nav aria-label="Navigation mobile">{links.map(([label, href]) => <SheetClose key={href} asChild><a href={href}>{label}</a></SheetClose>)}</nav><SheetClose asChild><a className="button" href="#contact">Demander un devis</a></SheetClose></SheetContent></Sheet></div></header>;
 }
 export function Reveal({ children, className = '' }: {
     children: React.ReactNode;

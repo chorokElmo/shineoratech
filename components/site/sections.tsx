@@ -7,7 +7,7 @@ import { fr } from '@/content/fr';
 import { WebsitePortfolio } from './website-portfolio';
 import { site, whatsappUrl } from '@/lib/site';
 import { Brand, ProductMockup, Reveal } from './landing';
-const serviceLinks = [['/creation-site-web/', 'Découvrir la création de sites web'], ['/creation-site-ecommerce/', 'Découvrir les boutiques en ligne'], ['/applications-web/', 'Découvrir les applications web']];
+const serviceLinks = [['/fr/creation-site-web/', 'Découvrir la création de sites web'], ['/fr/creation-site-ecommerce/', 'Découvrir les boutiques en ligne'], ['/fr/applications-web/', 'Découvrir les applications web']];
 const serviceIcons = [Globe2, ShoppingBag, PanelsTopLeft, PenTool, Sparkles, ShieldCheck];
 export function SectionTitle({ kicker, title, text }: {
     kicker: string;
