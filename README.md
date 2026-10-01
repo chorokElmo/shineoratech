@@ -61,6 +61,19 @@ Re-run `docker compose up --build -d` after source changes. This runs the produc
 
 Each page has its own title, description, canonical URL and Service structured data. All three pages are linked from the homepage and included in the sitemap. SEO URLs use the origin configured in lib/site.ts; update it to the confirmed production domain before publishing.
 
+## Pricing section
+
+The homepage includes `components/site/pricing.tsx` after Services. French and
+Arabic copy lives in `content/pricing.ts`. MAD is the default and billing currency;
+the USD view displays the requested approximate `~ $160` with a translated
+billing notice. Optional services remain explicitly priced in MAD. WhatsApp
+messages always quote the reference MAD price.
+
+This checkout has no language switcher. The pricing component follows changes
+to the document's `lang` and `dir` attributes. When integrating with a language
+context in another version, pass its current `fr` or `ar` value to
+`<Pricing language={language} />`. It does not add or modify navigation controls.
+
 ## Lead generation
 
 WhatsApp uses the supplied Moroccan number: +212 681 402 071. The form validates name, phone, email, project type, budget and message. It prepares an encoded, structured enquiry for WhatsApp; the visitor explicitly continues and sends in WhatsApp. It never claims that a message was sent. No lead is saved in local storage or a database, and no email delivery is currently configured. This requires WhatsApp to complete delivery.

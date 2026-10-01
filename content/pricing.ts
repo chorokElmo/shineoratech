@@ -1,0 +1,36 @@
+export const pricingCopy = {
+  fr: {
+    heading: 'Nos offres', badge: 'OFFRE DE LANCEMENT', title: 'Pack Starter',
+    price: 'À partir de 1 490 DH', subtitle: 'Votre présence professionnelle sur le web',
+    currencyLabel: 'Devise affichée', approximate: 'Prix approximatif — facturation en MAD',
+    cta: 'Demander un devis sur WhatsApp', optional: 'Domaine et hébergement disponibles en option.',
+    options: 'Voir les options et services supplémentaires →',
+    message: 'Bonjour ShineoraTech, je suis intéressé(e) par le Pack Starter à partir de 1 490 DH. Je souhaite recevoir un devis.',
+    features: ["Site vitrine jusqu’à 5 pages", 'Design moderne et personnalisé', '100% responsive mobile & tablette', 'Intégration WhatsApp', 'Formulaire de contact', 'Google Maps', 'Réseaux sociaux', 'SEO de base', 'SSL / HTTPS', 'Mise en ligne', '30 jours de support', '2 séries de modifications'],
+    extras: [
+      ['Domaine .com', '+150 DH/an'], ['Hébergement', '+300 à 500 DH/an'],
+      ['Domaine + hébergement + gestion', '+590 DH/an'], ['Page supplémentaire', '+200 DH'],
+      ['Email professionnel', '+150 DH'], ['Maintenance', '+200 DH/mois'],
+      ['Version FR/AR', '+400 DH'], ['Version FR/AR/EN', '+600 DH'],
+      ['Réservation / rendez-vous', '+500 DH'], ['Blog / actualités', '+400 DH'], ['Logo simple', '+300 DH'],
+    ],
+    billing: 'Options facturées en MAD',
+  },
+  ar: {
+    heading: 'عروضنا', badge: 'عرض الإطلاق', title: 'الباقة الأساسية',
+    price: 'ابتداءً من 1,490 درهم', subtitle: 'ابدأ حضورك الاحترافي على الإنترنت',
+    currencyLabel: 'عملة عرض السعر', approximate: 'السعر تقريبي — يتم الدفع بالدرهم المغربي',
+    cta: 'اطلب عرض سعر عبر واتساب', optional: 'اسم النطاق والاستضافة متاحان كخدمات إضافية.',
+    options: 'عرض الخيارات والخدمات الإضافية ←',
+    message: 'السلام عليكم ShineoraTech، أنا مهتم(ة) بالباقة الأساسية ابتداءً من 1,490 درهم وأرغب في الحصول على عرض سعر.',
+    features: ['موقع تعريفي حتى 5 صفحات', 'تصميم عصري ومخصص', 'متوافق مع الهاتف والتابلت', 'دمج زر واتساب', 'نموذج للتواصل', 'دمج خرائط Google', 'ربط مواقع التواصل الاجتماعي', 'تحسين SEO أساسي', 'حماية SSL / HTTPS', 'نشر الموقع على الإنترنت', 'دعم لمدة 30 يوماً', 'جولتان من التعديلات'],
+    extras: [
+      ['اسم نطاق .com', '+150 درهم/سنة'], ['استضافة الموقع', '+300 إلى 500 درهم/سنة'],
+      ['اسم النطاق + الاستضافة + الإدارة', '+590 درهم/سنة'], ['صفحة إضافية', '+200 درهم'],
+      ['بريد إلكتروني احترافي', '+150 درهم'], ['صيانة الموقع', '+200 درهم/شهر'],
+      ['نسخة بالفرنسية والعربية', '+400 درهم'], ['نسخة بالفرنسية والعربية والإنجليزية', '+600 درهم'],
+      ['الحجز / تحديد المواعيد', '+500 درهم'], ['مدونة / أخبار', '+400 درهم'], ['شعار بسيط', '+300 درهم'],
+    ],
+    billing: 'تُحسب أسعار الخدمات الإضافية بالدرهم المغربي',
+  },
+} as const;
