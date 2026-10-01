@@ -67,12 +67,33 @@ WhatsApp uses the supplied Moroccan number: +212 681 402 071. The form validates
 
 To add independent email delivery, supply a recipient and an email service. Add a protected server endpoint with server-side validation, abuse controls, and delivery handling; switch away from static export or use an external form service. Never put service credentials in client code.
 
+## Production domain and Google indexing
+
+The production origin is `https://shineoratech.com`, configured in `lib/site.ts`.
+This controls page canonical URLs, Open Graph URLs, organisation structured data,
+`robots.txt`, and all four public URLs in `sitemap.xml`.
+
+After deploying this change, verify that the homepage canonical uses this domain,
+`https://shineoratech.com/robots.txt` allows crawling and references the production
+sitemap, and `https://shineoratech.com/sitemap.xml` lists only production URLs.
+For Docker hosting, rebuild with `docker compose up --build -d`; for another
+static host, run `pnpm build` and publish the generated `out/` directory.
+Configure the hosting provider or reverse proxy to redirect HTTP to HTTPS and
+`www.shineoratech.com` to `https://shineoratech.com`, preserving paths and queries.
+
+In Google Search Console, add a Domain property for `shineoratech.com` and verify
+ownership using Google's supplied DNS TXT record. Submit
+`https://shineoratech.com/sitemap.xml`, then use URL Inspection to test the live
+homepage and request indexing. Check the Page indexing report for remaining
+issues. Verification requires the owner's Google account and DNS access; no
+verification token is included in the source. Indexing and rankings are Google's
+decision and are not guaranteed by deploying these settings.
+
 ## Still to supply
 
 - Business email and Instagram, Facebook, TikTok and LinkedIn URLs.
 - Real project screenshots and approved public demos.
 - Confirmed stacks for SplitEasy and Finance Management.
-- Public domain and publishing audience when ready for launch.
 
 The illustrative previews contain clearly labelled fictitious demonstration data. They do not claim actual client outcomes. No confidential records or customer testimonials are included.
 

@@ -1,6 +1,6 @@
 export const site = {
     name: 'ShineoraTech',
-    url: 'https://shineoratech.elmouakchourouk.chatgpt.site',
+    url: 'https://shineoratech.com',
     locale: 'fr-MA',
     direction: 'ltr' as const,
     whatsapp: '212681402071',
